@@ -1,23 +1,21 @@
 const Employee = require('../lib/Employee');
 
-
-
 test('Creates an employee name', () => {
-    var employee = new Employee('Dave');
+    var employee = new Employee('Andrea');
 
-    expect(employee.name).toBe('Dave');
+    expect(employee.name).toBe('Andrea');
     
 });
 
 test('Creates an employee id', () => {
-    var employee = new Employee('Dave', 5);
+    var employee = new Employee('Andrea', 10);
 
-    expect(employee.id).toBe(5);
+    expect(employee.id).toBe(10);
     
 });
 
 test('Creates an employee email', () => {
-    var employee = new Employee('Dave', 5, 'test@email.com');
+    var employee = new Employee('Andrea', 10, 'test@email.com');
 
     expect(employee.email).toBe('test@email.com');
     
