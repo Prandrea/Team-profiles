@@ -1,3 +1,3 @@
-const Prompt = require('./lib/Prompt');
+const questions = require('./lib/app');
 
-new Prompt().initializePrompt()
+new questions().initializePrompt()
