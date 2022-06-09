@@ -1,16 +1,14 @@
-const Prompt = require('../lib/Prompt');
+const Prompt = require('../lib/app');
 const Employee = require('../lib/Employee');
 const Manager = require('../lib/Manager');
 const Engineer = require('../lib/Engineer');
 
-//${employee.team.name}
 
-//////////////Generate Manager//////////////////
-const generateManager = teamArr => {
-  console.log(teamArr)
+const generateManager = teamInfo => {
+  console.log(teamInfo)
  
   return `
-        ${teamArr
+        ${teamInfo
           .filter(({ office }) => office)
           .map(({ name, id, email, office, getRole }) => {
             return ` 
@@ -28,16 +26,16 @@ const generateManager = teamArr => {
   `
 }
 
-//////////////Generate Engineer//////////////////
-const generateEngineer = teamArr => {
-  //console.log(teamArr)
+
+const generateEngineer = teamInfo => {
+ 
  
   return `
-        ${teamArr
+        ${teamInfo
           .filter(({ github }) => github)
           .map(({ name, id, email, github, getRole }) => {
             return `
-            <article class="project-article" style="border-top-color:#FD2155;">
+            <article class="project-article">
                 <div class="project-content">
                     <div class="post-data" style="color:#FD2155;"><span class="oi oi-cog"></span>${getRole()}</div>
                     <h5 class="post-title">${name}</h5>
@@ -51,16 +49,16 @@ const generateEngineer = teamArr => {
   `
 }
 
-//////////////Generate Intern//////////////////
-const generateIntern = teamArr => {
-  //console.log(teamArr)
+
+const generateIntern = teamInfo => {
+
  
   return `
-        ${teamArr
+        ${teamInfo
           .filter(({ school }) => school)
           .map(({ name, id, email, school, getRole }) => {
             return `
-            <article class="project-article" style="border-top-color:#E4EE89;">
+            <article class="project-article">
                 <div class="project-content">
                     <div class="post-data" style="color:#E4EE89;"><span class="oi oi-signal"></span>${getRole()}</div>
                     <h5 class="post-title">${name}</h5>
@@ -74,7 +72,7 @@ const generateIntern = teamArr => {
   `
 }
 
-//${employee.getRole()}
+
 module.exports = employee => {
    
     return `
